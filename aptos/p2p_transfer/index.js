@@ -73,7 +73,7 @@ const main = async () => {
       });
 
       const submitEndTime = performance.now();
-      await aptos.waitForTransaction({ transactionHash: committedTransaction.hash });
+      await aptos.waitForTransaction({ transactionHash: committedTransaction.hash, options: { waitForIndexer: false } });
 
       const endTime = performance.now();
 
